@@ -1,0 +1,96 @@
+<devicedata>
+  <copyright>Copyright 2020 Control4 Corporation. All rights reserved.</copyright>
+  <creator>Control4</creator>
+  <manufacturer>Control4</manufacturer>
+  <name>User Activity</name>
+  <model>User Activity</model>
+  <created>10/8/2019 11:30</created>
+  <modified>03/27/2020 10:18 AM</modified>
+  <version>5</version>
+  <control>lua_gen</control>
+  <driver>DriverWorks</driver>
+  <config>
+    <script file="driver.lua" />
+    <properties>
+      <property>
+        <name>TCP Port</name>
+        <type>RANGED_INTEGER</type>
+        <minimum>1</minimum>
+        <maximum>65535</maximum>
+        <default>10001</default>
+        <readonly>false</readonly>
+      </property>
+      <property>
+        <name>Activity Command</name>
+        <default>activity</default>
+        <type>STRING</type>
+        <readonly>false</readonly>
+      </property>
+    </properties>
+    <commands />
+    <actions />
+  </config>
+  <capabilities />
+  <proxies>
+    <proxy proxybindingid="5001" name="User Activity">User_Activity</proxy>
+  </proxies>
+  <events>
+    <event>
+      <id>1</id>
+      <name>Activity Detected</name>
+      <description>Activity was detected</description>
+    </event>
+  </events>
+  <connections>
+    <connection>
+      <type>1</type>
+      <id>5001</id>
+      <audiosource>false</audiosource>
+      <videosource>false</videosource>
+      <connectionname>Activity </connectionname>
+      <facing>1</facing>
+      <consumer>false</consumer>
+      <linelevel>false</linelevel>
+      <classes>
+        <class>
+          <classname>CONTACT_SENSOR</classname>
+        </class>
+      </classes>
+    </connection>
+    <!-- <connection>
+      <id>300</id>
+      <facing>6</facing>
+      <connectionname>Activity Sensor</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>False</linelevel>
+      <classes>
+          <class>
+              <classname>CONTACT_SENSOR</classname>
+          </class>
+      </classes>      
+    </connection> -->
+  </connections>
+  <!-- <dependencies>
+    <dependency alwaysAdd="true" addMultiple="false">
+        <name>contactsingle_motionsensor_c4.c4i</name>
+        <auto_bindings>
+            <auto_binding>
+                <id>300</id>
+                <isconsumer>false</isconsumer>
+                <classes>
+                    <class>
+                        <classname>CONTACT_SENSOR</classname>
+                    </class>
+                </classes>
+                <dep_binding_id>1</dep_binding_id>
+            </auto_binding>
+        </auto_bindings>
+    </dependency>
+  </dependencies> -->
+  <composer_categories>
+    <category>Sensors</category>
+  </composer_categories>
+</devicedata>
