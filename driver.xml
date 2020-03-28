@@ -6,7 +6,7 @@
   <model>User Activity</model>
   <created>10/8/2019 11:30</created>
   <modified>03/27/2020 10:18 AM</modified>
-  <version>5</version>
+  <version>6</version>
   <control>lua_gen</control>
   <driver>DriverWorks</driver>
   <config>
