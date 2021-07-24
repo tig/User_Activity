@@ -6,7 +6,12 @@
         {
             "label": "Package driver",
             "type": "shell",
-            "command": "../../control4/drivers-driverpackager/dp3/driverpackager.py -v . . "
+            "command": "../../control4/drivers-driverpackager/dp3/driverpackager.py -v . . ",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

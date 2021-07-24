@@ -7,40 +7,32 @@ on:
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab    
-  workflow_dispatch:
-    inputs:
-      driver_name: 
-        description: 'Driver name'
-        required: true
-        default: 'User_Activity'
-      project_dir:
-        description: 'Project directory'
-        required: true
-        default: '.'
-
 jobs:
   build_sample_driver:
     runs-on: ubuntu-latest
     name: Build User_Activity
+    env:
+      project_dir: .
+      driver_name: User_Activity
+
     steps:
       - name: Checkout local repo
         id: checkout_local_repo
         uses: actions/checkout@v2
         with:
-          submodules: true
+          submodules: false
 
       - name: Build c4z from manifest
         id: build
         uses: control4/drivers-driverpackager@v1
         with:
-          projectDir: '${{ github.event.inputs.project_dir }}'
-          c4zproj: '${{ github.event.inputs.driver_name }}.c4zproj'
+          projectDir: '${{ env.project_dir }}'
+          c4zproj: '${{ env.driver_name }}.c4zproj'
           outputDir: '.'
 
       - name: Commit and push updated sample driver.c4z
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Update dev c4z" -a
+          git commit -m "Build latest ${{ env.driver_name }}.c4z" -a
           git push
