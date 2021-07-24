@@ -1,4 +1,4 @@
-name: Manually build User_Activity
+name: Build User_Activity
 
 on:
   workflow_dispatch:
