@@ -10,8 +10,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab    
   workflow_dispatch:
     inputs:
-      sample_driver:
-        description: 'directory'
+      driver_name: 'User_Activity'
+        description: 'Driver name'
+        required: true
+        default: 'sample'
+      project_dir: '.'
+        description: 'Project directory'
         required: true
         default: '.'
 
@@ -30,8 +34,8 @@ jobs:
         id: build
         uses: control4/drivers-driverpackager@v1
         with:
-          projectDir: '${{ github.event.inputs.sample_driver }}'
-          c4zproj: '${{ github.event.inputs.sample_driver }}.c4zproj'
+          projectDir: '${{ github.event.inputs.project_dir }}'
+          c4zproj: '${{ github.event.inputs.driver_name }}.c4zproj'
           outputDir: '.'
 
       - name: Commit and push updated sample driver.c4z
