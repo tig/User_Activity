@@ -10,11 +10,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab    
   workflow_dispatch:
     inputs:
-      driver_name: 'User_Activity'
+      driver_name: 
         description: 'Driver name'
         required: true
-        default: 'sample'
-      project_dir: '.'
+        default: 'User_Activity'
+      project_dir:
         description: 'Project directory'
         required: true
         default: '.'
