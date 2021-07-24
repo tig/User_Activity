@@ -1,14 +1,15 @@
 <devicedata>
-  <copyright>Copyright 2020 Control4 Corporation. All rights reserved.</copyright>
-  <creator>Control4</creator>
-  <manufacturer>Control4</manufacturer>
+  <copyright>Copyright 2021 Kindel. All rights reserved.</copyright>
+  <creator>Kindel</creator>
+  <manufacturer>Kindel</manufacturer>
   <name>User Activity</name>
   <model>User Activity</model>
   <created>10/8/2019 11:30</created>
   <modified>03/27/2020 10:18 AM</modified>
-  <version>6</version>
+  <version>12</version>
   <control>lua_gen</control>
   <driver>DriverWorks</driver>
+  <DeviceIcon>device</DeviceIcon>
   <config>
     <script file="driver.lua" />
     <properties>
@@ -47,7 +48,7 @@
       <id>5001</id>
       <audiosource>false</audiosource>
       <videosource>false</videosource>
-      <connectionname>Activity </connectionname>
+      <connectionname>Activity</connectionname>
       <facing>1</facing>
       <consumer>false</consumer>
       <linelevel>false</linelevel>

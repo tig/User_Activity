@@ -112,7 +112,7 @@ function CheckPattern (data)
 
 		print ('Firing Event: Activity Detected')
 		C4:FireEvent ('Activity Detected')
-		C4:SendToProxy(5001, "CLOSED",{}, "NOTIFY")
+		C4:SendToProxy(5001, "OPEN",{}, "NOTIFY")
 		return true
 	end
 	return false
